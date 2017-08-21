@@ -5,9 +5,52 @@
 #include <fstream>
 #include <mutex>
 #include <memory>
+
+#define LOG_LOG(lvl, fmt, ...) \
+	Utils::SimpleLogger::_log.Write(lvl, fmt, ##__VA_ARGS__)
+
+#define LOG_INFO(fmt, ...) \
+	LOG_LOG(Utils::Logger::LVL_INFO, fmt, ##__VA_ARGS__)
+
 namespace Utils
 {
 
+// default instance of logger
+// forward declaration
+class Logger;
+
+class SimpleLogger
+{
+public:
+	static Logger _log;			
+
+};
+
+//class SimpleLogger: public Logger
+//{
+//public:
+//	static SimpleLogger& GetInstance()
+//	{
+//		static SimpleLogger ins(Logger::LVL_INFO, Logger::LOGTO_CONSOLE_AND_FILE, "log.txt");			
+//		return ins;
+//	}
+//	SimpleLogger(SimpleLogger const&) = delete;
+//	void operator=(SimpleLogger const&) = delete;
+//	
+//
+//private:
+//	SimpleLogger() {}
+//	SimpleLogger(Logger::LOG_LEVEL lvl, Logger::LOG_POLICY p, const std::string& filename)
+//		:Logger(lvl, p, filename)
+//	{}
+//
+//
+//
+//};
+
+	
+	
+	
 class Logger
 {
 public:
@@ -52,6 +95,7 @@ protected:
 	std::mutex m_writeMutex;
 
 };
+
 
 }
 

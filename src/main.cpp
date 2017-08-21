@@ -1,13 +1,15 @@
-//*
-#include "Utils/Log.h"
-#include "Utils/Logger.h"
 #include <iostream>
 
+#include "Utils/Logger.h"
+
+#include "A.h"
 int main()
 {
-	LOG_INFO("Starting session %  %", 1 , "vkl");
+	LOG_INFO("Starting session");
 
 	LOG_INFO("% world% %\n", "Hello", '!', 123);
+
+	ABase ia;
 
 	LOG_INFO("Ending session");
 	int a;

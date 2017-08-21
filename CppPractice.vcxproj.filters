@@ -30,13 +30,19 @@
     <ClInclude Include="include\Utils\Logger.h">
       <Filter>include\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="include\Utils\Log.h">
-      <Filter>include\Utils</Filter>
+    <ClInclude Include="src\A.h">
+      <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
       <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\A.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utils\Logger.cpp">
+      <Filter>src\Utils</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
